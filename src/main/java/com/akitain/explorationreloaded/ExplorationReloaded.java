@@ -1,6 +1,7 @@
 package com.akitain.explorationreloaded;
 
 import com.akitain.explorationreloaded.flight.CampfireSafety;
+import com.akitain.explorationreloaded.teleport.TeleportRituals;
 import com.akitain.explorationreloaded.flight.ElytraEnchantability;
 import com.akitain.explorationreloaded.flight.FlightLoot;
 import com.akitain.explorationreloaded.flight.FlightNetworking;
@@ -31,6 +32,7 @@ public class ExplorationReloaded implements ModInitializer {
     public void onInitialize() {
         ExplorationComponents.register();
         ExplorationItems.register();
+        TeleportRituals.register();
         ExplorationRegistries.register();
         FlightRules.register();
         FlightState.register();
