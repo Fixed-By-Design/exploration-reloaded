@@ -7,7 +7,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.entity.CampfireBlockEntity;
+import net.minecraft.world.level.block.state.properties.Half;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 
@@ -31,6 +33,21 @@ public class CampfireSmokeMixin {
             target = "Lnet/minecraft/world/level/block/CampfireBlock;makeParticles(Lnet/minecraft/world/level/Level;Lnet/minecraft/core/BlockPos;ZZ)V"))
     private static void erScaleSmokeToHearth(Level level, BlockPos pos, boolean isSignalFire, boolean smoking,
                                              Operation<Void> original) {
+        if (Hearth.isCovered(level, pos)) {
+            // A few short-lived wisps escape above the lid, so the station remains visible from
+            // above. Emitting below it hid the smoke completely behind the trapdoor's surface.
+            RandomSource random = level.getRandom();
+            if (random.nextInt(3) == 0) {
+                double lidTop = level.getBlockState(pos.above()).getValue(TrapDoorBlock.HALF) == Half.TOP
+                        ? 1.0 : 3.0 / 16.0;
+                level.addParticle(ParticleTypes.SMOKE,
+                        pos.getX() + 0.3 + random.nextDouble() * 0.4,
+                        pos.getY() + 1.0 + lidTop + 0.05,
+                        pos.getZ() + 0.3 + random.nextDouble() * 0.4,
+                        0.0, 0.005, 0.0);
+            }
+            return;
+        }
         int power = Hearth.power(level, pos);
 
         // Any hearth at all already earns the tall signal column; size then piles more on top.

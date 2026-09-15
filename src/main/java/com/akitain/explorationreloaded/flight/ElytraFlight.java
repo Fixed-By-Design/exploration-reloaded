@@ -6,13 +6,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.world.level.block.CampfireBlock;
-import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.core.BlockPos;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
+import org.jspecify.annotations.Nullable;
 
 /**
  * Elytra flight reworked after Aileron: fireworks no longer push, campfires do. Gaining altitude costs
@@ -104,15 +103,19 @@ public final class ElytraFlight {
     }
 
     /**
-     * Crouching on a lit campfire means riding its smoke column rather than blundering into the fire.
-     * It is what earns the burn exemption, the launch, and the Smokestack charges.
+     * A glider can charge on a lit campfire or on the closed trapdoor directly covering it.
+     * Both surfaces grant the same launch and Smokestack charges.
      */
     public static boolean isRidingCampfireSmoke(Player player) {
-        if (!player.isShiftKeyDown() || !player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA)) {
-            return false;
+        return chargingCampfire(player) != null;
+    }
+
+    private static @Nullable BlockPos chargingCampfire(Player player) {
+        if (!player.onGround() || !player.isShiftKeyDown()
+                || !player.getItemBySlot(EquipmentSlot.CHEST).is(Items.ELYTRA)) {
+            return null;
         }
-        BlockState below = player.getBlockStateOn();
-        return below.is(BlockTags.CAMPFIRES) && below.getValue(CampfireBlock.LIT);
+        return Hearth.chargingFire(player.level(), player.getOnPos());
     }
 
     /**
@@ -148,12 +151,13 @@ public final class ElytraFlight {
     }
 
     private static void tickCampfireCharging(ServerLevel level, ServerPlayer player) {
-        if (!isRidingCampfireSmoke(player)) {
+        BlockPos firePos = chargingCampfire(player);
+        if (firePos == null) {
             FlightState.setCampfireChargeTime(player, 0);
             return;
         }
 
-        FlightState.setHearthPower(player, Hearth.power(level, player.getOnPos()));
+        FlightState.setHearthPower(player, Hearth.power(level, firePos));
 
         int elapsed = FlightState.campfireChargeTime(player) + 1;
         FlightState.setCampfireChargeTime(player, elapsed);
