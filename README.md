@@ -10,11 +10,26 @@ Fabric mod extracting Fixed Minecraft's exploration-focused changes into a stand
 - Wandering trader buying trades from Fixed Minecraft's trader changes.
 - Fixed Minecraft fishing loot pools and bait behavior.
 - Sniffer dig loot expansion and related husbandry advancements.
-- Dragon Firework Rocket requirement for Elytra boosting, plus underwater Elytra restriction.
+- Campfire-powered Elytra flight, Smokestack charges and Cloudskipper gliding, plus underwater Elytra restriction.
 - Horse, nautilus, parrot, llama, and caravan travel changes.
 - Ghast harness recipes and Nether fortress harness loot.
 - Custom map decorations for outposts, ruined portals, and trail ruins.
 - Trail ruins exploration compass loot function.
+
+## Covered flight stations
+
+Place a trapdoor directly above a lit campfire to control its smoke:
+
+- **Closed:** only a few small smoke wisps escape just above the lid, and the updraft is blocked. With Elytra equipped, crouch on the trapdoor to charge, then stand up to launch. Smokestack charges and the launch bonuses from neighbouring campfires and hay are preserved.
+- **Open:** the normal smoke column returns and the updraft passes through the trapdoor, allowing gliders to gain altitude overhead.
+
+Both upper and lower trapdoors work, including iron trapdoors controlled by redstone. Each fire needs its own lid. Solid roofs and water still block updrafts; an extinguished fire cannot charge a glider. Smoke emitted before closing a lid fades out normally.
+
+## Validation
+
+Run `./gradlew build runGameTest` with Java 25. Game tests cover charging surfaces, unenchanted launches, Smokestack charges, hearth power and redstone lids. Test-only code is kept in `src/gametest` and is not included in the mod jar.
+
+For visual verification, compare open and closed lids on a single fire and on a 3×3 hearth over hay. Check both trapdoor halves, normal and soul campfires, and the reduced particle setting. Closed lids should show only small wisps; reopening should restore the tall column and lift. Check the charging HUD and takeoff in first person.
 
 ## Attribution
 

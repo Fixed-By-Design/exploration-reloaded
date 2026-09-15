@@ -48,6 +48,15 @@ dependencies {
     implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 }
 
+fabricApi {
+    configureTests {
+        createSourceSet = true
+        modId = "exploration-reloaded-gametest"
+        enableClientGameTests = false
+        eula = true
+    }
+}
+
 processResources {
     inputs.property "version", project.version
     filesMatching("fabric.mod.json") {

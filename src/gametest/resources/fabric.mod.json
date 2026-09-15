@@ -1,0 +1,15 @@
+{
+    "schemaVersion": 1,
+    "id": "exploration-reloaded-gametest",
+    "version": "1.0.0",
+    "name": "Exploration Reloaded Game Tests",
+    "environment": "*",
+    "entrypoints": {
+        "fabric-gametest": [
+            "com.akitain.explorationreloaded.flight.CoveredHearthTests"
+        ]
+    },
+    "depends": {
+        "exploration-reloaded": "*"
+    }
+}

@@ -3,7 +3,9 @@ package com.akitain.explorationreloaded.flight;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.CampfireBlock;
+import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import org.jspecify.annotations.Nullable;
 
 /**
  * How much of a hearth a campfire is part of, on a single scale shared by the launch and the updraft so
@@ -19,6 +21,27 @@ public final class Hearth {
     public static final int MAX_POWER = 8 + SIGNAL_FIRE_WORTH;
 
     private Hearth() {
+    }
+
+    /** A horizontal trapdoor immediately above the fire acts as a smoke lid. */
+    public static boolean isClosedTrapdoor(BlockState state) {
+        return state.getBlock() instanceof TrapDoorBlock && !state.getValue(TrapDoorBlock.OPEN);
+    }
+
+    public static boolean isCovered(BlockGetter level, BlockPos firePos) {
+        return isClosedTrapdoor(level.getBlockState(firePos.above()));
+    }
+
+    /** Open, dry trapdoors let the column through; closed lids and other blocks stop it. */
+    public static boolean passesUpdraft(BlockState state) {
+        return state.isAir() || (state.getBlock() instanceof TrapDoorBlock
+                && state.getValue(TrapDoorBlock.OPEN) && state.getFluidState().isEmpty());
+    }
+
+    /** Resolve the actual heat source from the block supporting the player's feet. */
+    public static @Nullable BlockPos chargingFire(BlockGetter level, BlockPos supportPos) {
+        BlockPos firePos = isClosedTrapdoor(level.getBlockState(supportPos)) ? supportPos.below() : supportPos;
+        return CampfireBlock.isLitCampfire(level.getBlockState(firePos)) ? firePos : null;
     }
 
     /** Zero for a lone campfire, up to {@link #MAX_POWER} for a signal fire ringed by eight others. */

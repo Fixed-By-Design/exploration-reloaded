@@ -70,7 +70,8 @@ public final class FlightPhysics {
         Level level = player.level();
         BlockPos.MutableBlockPos pos = player.blockPosition().mutable();
         int depth = 0;
-        while (depth < MAX_UPDRAFT_DEPTH && level.isEmptyBlock(pos) && level.isInsideBuildHeight(pos.getY())) {
+        while (depth < MAX_UPDRAFT_DEPTH && level.isInsideBuildHeight(pos.getY())
+                && Hearth.passesUpdraft(level.getBlockState(pos))) {
             depth++;
             pos.move(Direction.DOWN);
         }
