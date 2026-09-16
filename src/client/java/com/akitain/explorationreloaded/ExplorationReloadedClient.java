@@ -9,6 +9,7 @@ import net.minecraft.client.renderer.item.properties.conditional.ConditionalItem
 public class ExplorationReloadedClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+        com.akitain.explorationreloaded.goat.GoatClient.register();
         ClientMapBookNetworking.register();
         FlightClient.register();
         FlightPhysics.register();

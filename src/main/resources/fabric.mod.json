@@ -26,6 +26,10 @@
     "mixins": [
         "exploration-reloaded.mixins.json",
         {
+            "config": "exploration-reloaded.goat.client.mixins.json",
+            "environment": "client"
+        },
+        {
             "config": "exploration-reloaded.client.mixins.json",
             "environment": "client"
         },
