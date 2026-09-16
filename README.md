@@ -17,6 +17,23 @@ Fabric mod extracting Fixed Minecraft's exploration-focused changes into a stand
 - Trail ruins exploration compass loot function.
 - Wither Compass journeys between lodestone platforms, including voluntary group travel and emerald villager transport.
 
+## Mountain goats
+
+Existing vanilla goats can become mountain mounts. Their horns, screaming variant, milk, breeding and wild spawning are preserved.
+
+1. Use an empty hand on an adult goat to ride it. Keep trying after it throws you off, just as with a horse. Hearts mark successful taming.
+2. Equip a saddle by using it on the tamed goat. Horse armour fits too, with a separate model made for the goat's body and legs.
+3. Mount empty-handed and use your normal movement keys. Hold and release **Jump** at the top of the vanilla charge bar to leap approximately **12 blocks high**. The charge timing, release-triggered rear and native block/potion modifiers follow horses. Forward input carries the leap forward.
+4. Hold **R** until the head is fully lowered, then release to ram straight ahead. A quick tap only cancels preparation; rearing belongs to the normal **Jump** control. This key can be changed under Movement in Controls. Screaming goats use their own voices.
+
+The jump rear lasts about a second, following the native horse timing. A ram needs roughly one second of head-down preparation and travels up to seven blocks. It deals the vanilla goat's two damage and strong knockback, stopping at the first creature or wall. A horn can break and drop when striking the same blocks as a wild goat. Rams have a five-second cooldown and respect PvP and team rules. Ramming cannot overlap a jump or its rearing animation. Releasing too early, dismounting, taking damage or leaving solid ground cancels preparation.
+
+Tamed goats have ten hearts. Wheat restores three health points; healthy goats still breed normally. Their native fall resistance also protects the rider during ordinary mountain jumps, but large cliffs remain dangerous. Jumping has a short recovery after landing.
+
+Use shears while dismounted to recover the saddle, then the armour. Both also drop on death. Babies cannot be ridden or equipped. Taming is saved with the goat, and friends can ride an equipped goat too. Tamed goats no longer ram on their own.
+
+The saddle, blanket, stirrups and seven armour materials were authored in Blockbench. Editable models are in [`art/goat_mount`](art/goat_mount). The vanilla goat renderer receives equipment layers and horse-style rearing, tucked airborne legs and landing poses. No replacement mob or animation-library dependency is added.
+
 ## Wither Compass platforms
 
 Build a **single horizontal 7×7 layer of 49 identical beacon-base blocks**, with a Lodestone **on top of the centre block**. Both endpoints must have the same material. No pyramid or additional layers are required. Copper is not a beacon-base material.
@@ -64,7 +81,7 @@ Both upper and lower trapdoors work, including iron trapdoors controlled by reds
 
 ## Validation
 
-Run `./gradlew build` with Java 25; it includes `runGameTest`. Game tests cover charging surfaces, unenchanted launches, Smokestack charges, hearth power and redstone lids, plus platform shape, decorated floors, safe arrivals, anvil consumption, explicit group enrollment, cancellations, mounts and cross-dimensional travel. Test-only code and the optional rose-gold registry fixture are kept in `src/gametest` and are not included in the mod jar. To check anvil compatibility, place Enchantment Overhaul in `build/run/gameTest/mods` before running the tests.
+Run `./gradlew build` with Java 25; it includes `runGameTest`. Game tests cover charging surfaces, unenchanted launches, Smokestack charges, hearth power and redstone lids, plus platform shape, decorated floors, safe arrivals, anvil consumption, explicit group enrollment, cancellations, mounts and cross-dimensional travel. Goat tests cover actual taming attempts, equipment protection and drops, milk and breeding, owner persistence, jump rearing and ram validation, native ram damage, knockback and horn drops, twelve-block jumps, native horse parity on honey with Jump Boost, and rider fall protection. Test-only code and the optional rose-gold registry fixture are kept in `src/gametest` and are not included in the mod jar. To check anvil compatibility, place Enchantment Overhaul in `build/run/gameTest/mods` before running the tests.
 
 For teleportation visual checks, test an emerald pair with bare blocks and with a full decorative floor plus carpet. Compare the boundary, passenger particles and countdown in first and third person, including Reduced particles. Verify that beacon activation, enrollment, rising chimes, departure, arrival and cancellation are audible at normal Blocks volume. For multiplayer, one participant should step out or take damage during preparation; bystanders should stay behind. Test a distant, unloaded destination and a Netherite pair across dimensions.
 

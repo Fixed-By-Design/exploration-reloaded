@@ -38,6 +38,7 @@ public class ExplorationReloaded implements ModInitializer {
         FlightState.register();
         CampfireSafety.register();
         FlightNetworking.register();
+        com.akitain.explorationreloaded.goat.GoatNetworking.register();
         ElytraEnchantability.register();
         FlightLoot.register();
         MapBookNetworking.register();

@@ -1,0 +1,7 @@
+{
+  "required": true,
+  "package": "com.akitain.explorationreloaded.mixin.client.goat",
+  "compatibilityLevel": "JAVA_25",
+  "client": ["GoatRenderStateMixin", "GoatModelMixin", "GoatRendererMixin"],
+  "injectors": {"defaultRequire": 1}
+}

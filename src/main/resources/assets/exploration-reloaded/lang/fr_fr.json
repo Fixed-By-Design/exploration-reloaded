@@ -49,5 +49,6 @@
     "teleport.exploration-reloaded.players": "%s joueurs",
     "teleport.exploration-reloaded.one_creature": "%s créature",
     "teleport.exploration-reloaded.creatures": "%s créatures",
-    "teleport.exploration-reloaded.with_creatures": ", %s"
+    "teleport.exploration-reloaded.with_creatures": ", %s",
+    "key.exploration-reloaded.goat_ram": "Charger à cornes"
 }

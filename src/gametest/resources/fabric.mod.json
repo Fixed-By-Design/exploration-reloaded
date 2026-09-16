@@ -7,7 +7,8 @@
     "entrypoints": {
         "fabric-gametest": [
             "com.akitain.explorationreloaded.flight.CoveredHearthTests",
-            "com.akitain.explorationreloaded.teleport.TeleportTests"
+            "com.akitain.explorationreloaded.teleport.TeleportTests",
+            "com.akitain.explorationreloaded.goat.GoatMountTests"
         ],
         "main": [
             "com.akitain.explorationreloaded.teleport.TeleportTestFixtures"

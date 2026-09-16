@@ -49,5 +49,6 @@
     "teleport.exploration-reloaded.players": "%s players",
     "teleport.exploration-reloaded.one_creature": "%s creature",
     "teleport.exploration-reloaded.creatures": "%s creatures",
-    "teleport.exploration-reloaded.with_creatures": ", %s"
+    "teleport.exploration-reloaded.with_creatures": ", %s",
+    "key.exploration-reloaded.goat_ram": "Ram"
 }

@@ -1,0 +1,566 @@
+{
+  "blockbench": "5.1.6",
+  "saddleCubes": 13,
+  "armorCubes": 11,
+  "source": "minecraft:goat, Minecraft 26.1.2",
+  "saddleUV": [
+    {
+      "cube": [
+        "blanket",
+        "body",
+        [
+          -5,
+          -18,
+          -1
+        ],
+        [
+          11,
+          1,
+          10
+        ],
+        "cloth"
+      ],
+      "uv": [
+        1,
+        1
+      ],
+      "width": 42,
+      "height": 11
+    },
+    {
+      "cube": [
+        "seat",
+        "body",
+        [
+          -3,
+          -19,
+          0
+        ],
+        [
+          7,
+          1,
+          7
+        ],
+        "leather"
+      ],
+      "uv": [
+        45,
+        1
+      ],
+      "width": 28,
+      "height": 8
+    },
+    {
+      "cube": [
+        "pommel",
+        "body",
+        [
+          -4,
+          -20,
+          -1
+        ],
+        [
+          9,
+          2,
+          2
+        ],
+        "leather"
+      ],
+      "uv": [
+        75,
+        1
+      ],
+      "width": 22,
+      "height": 4
+    },
+    {
+      "cube": [
+        "cantle",
+        "body",
+        [
+          -4,
+          -20,
+          6
+        ],
+        [
+          9,
+          2,
+          2
+        ],
+        "leather"
+      ],
+      "uv": [
+        99,
+        1
+      ],
+      "width": 22,
+      "height": 4
+    },
+    {
+      "cube": [
+        "left_girth",
+        "body",
+        [
+          5,
+          -17,
+          0
+        ],
+        [
+          1,
+          11,
+          2
+        ],
+        "strap"
+      ],
+      "uv": [
+        1,
+        14
+      ],
+      "width": 6,
+      "height": 13
+    },
+    {
+      "cube": [
+        "right_girth",
+        "body",
+        [
+          -5,
+          -17,
+          0
+        ],
+        [
+          1,
+          11,
+          2
+        ],
+        "strap"
+      ],
+      "uv": [
+        9,
+        14
+      ],
+      "width": 6,
+      "height": 13
+    },
+    {
+      "cube": [
+        "belly_girth",
+        "body",
+        [
+          -4,
+          -7,
+          0
+        ],
+        [
+          9,
+          1,
+          2
+        ],
+        "strap"
+      ],
+      "uv": [
+        17,
+        14
+      ],
+      "width": 22,
+      "height": 3
+    },
+    {
+      "cube": [
+        "left_stirrup_front",
+        "body",
+        [
+          6,
+          -14,
+          1
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        "metal"
+      ],
+      "uv": [
+        41,
+        14
+      ],
+      "width": 4,
+      "height": 5
+    },
+    {
+      "cube": [
+        "left_stirrup_back",
+        "body",
+        [
+          6,
+          -14,
+          4
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        "metal"
+      ],
+      "uv": [
+        47,
+        14
+      ],
+      "width": 4,
+      "height": 5
+    },
+    {
+      "cube": [
+        "left_stirrup_foot",
+        "body",
+        [
+          6,
+          -10,
+          1
+        ],
+        [
+          1,
+          1,
+          4
+        ],
+        "metal"
+      ],
+      "uv": [
+        53,
+        14
+      ],
+      "width": 10,
+      "height": 5
+    },
+    {
+      "cube": [
+        "right_stirrup_front",
+        "body",
+        [
+          -6,
+          -14,
+          1
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        "metal"
+      ],
+      "uv": [
+        65,
+        14
+      ],
+      "width": 4,
+      "height": 5
+    },
+    {
+      "cube": [
+        "right_stirrup_back",
+        "body",
+        [
+          -6,
+          -14,
+          4
+        ],
+        [
+          1,
+          4,
+          1
+        ],
+        "metal"
+      ],
+      "uv": [
+        71,
+        14
+      ],
+      "width": 4,
+      "height": 5
+    },
+    {
+      "cube": [
+        "right_stirrup_foot",
+        "body",
+        [
+          -6,
+          -10,
+          1
+        ],
+        [
+          1,
+          1,
+          4
+        ],
+        "metal"
+      ],
+      "uv": [
+        77,
+        14
+      ],
+      "width": 10,
+      "height": 5
+    }
+  ],
+  "armorUV": [
+    {
+      "cube": [
+        "breastplate",
+        "body",
+        [
+          -4,
+          -16,
+          -9
+        ],
+        [
+          9,
+          8,
+          1
+        ],
+        "armor"
+      ],
+      "uv": [
+        1,
+        1
+      ],
+      "width": 20,
+      "height": 9
+    },
+    {
+      "cube": [
+        "left_shoulder",
+        "body",
+        [
+          6,
+          -18,
+          -7
+        ],
+        [
+          1,
+          8,
+          8
+        ],
+        "armor"
+      ],
+      "uv": [
+        23,
+        1
+      ],
+      "width": 18,
+      "height": 16
+    },
+    {
+      "cube": [
+        "right_shoulder",
+        "body",
+        [
+          -6,
+          -18,
+          -7
+        ],
+        [
+          1,
+          8,
+          8
+        ],
+        "armor"
+      ],
+      "uv": [
+        43,
+        1
+      ],
+      "width": 18,
+      "height": 16
+    },
+    {
+      "cube": [
+        "left_flank",
+        "body",
+        [
+          5,
+          -16,
+          3
+        ],
+        [
+          1,
+          7,
+          6
+        ],
+        "armor"
+      ],
+      "uv": [
+        63,
+        1
+      ],
+      "width": 14,
+      "height": 13
+    },
+    {
+      "cube": [
+        "right_flank",
+        "body",
+        [
+          -5,
+          -16,
+          3
+        ],
+        [
+          1,
+          7,
+          6
+        ],
+        "armor"
+      ],
+      "uv": [
+        79,
+        1
+      ],
+      "width": 14,
+      "height": 13
+    },
+    {
+      "cube": [
+        "neck_band",
+        "body",
+        [
+          -5,
+          -19,
+          -7
+        ],
+        [
+          11,
+          1,
+          3
+        ],
+        "strap"
+      ],
+      "uv": [
+        95,
+        1
+      ],
+      "width": 28,
+      "height": 4
+    },
+    {
+      "cube": [
+        "rear_band",
+        "body",
+        [
+          -4,
+          -18,
+          8
+        ],
+        [
+          9,
+          1,
+          1
+        ],
+        "strap"
+      ],
+      "uv": [
+        1,
+        19
+      ],
+      "width": 20,
+      "height": 2
+    },
+    {
+      "cube": [
+        "left_fore_greave",
+        "left_front_leg",
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        "armor",
+        0.18
+      ],
+      "uv": [
+        23,
+        19
+      ],
+      "width": 12,
+      "height": 6
+    },
+    {
+      "cube": [
+        "right_fore_greave",
+        "right_front_leg",
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        "armor",
+        0.18
+      ],
+      "uv": [
+        37,
+        19
+      ],
+      "width": 12,
+      "height": 6
+    },
+    {
+      "cube": [
+        "left_hind_greave",
+        "left_hind_leg",
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        "armor",
+        0.18
+      ],
+      "uv": [
+        51,
+        19
+      ],
+      "width": 12,
+      "height": 6
+    },
+    {
+      "cube": [
+        "right_hind_greave",
+        "right_hind_leg",
+        [
+          0,
+          6,
+          0
+        ],
+        [
+          3,
+          3,
+          3
+        ],
+        "armor",
+        0.18
+      ],
+      "uv": [
+        65,
+        19
+      ],
+      "width": 12,
+      "height": 6
+    }
+  ]
+}
